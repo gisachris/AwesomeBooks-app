@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  /* eslint-disable no-use-before-define */
   /* eslint-disable no-plusplus */
 // document structure selection
   const container = document.querySelector('.container');
@@ -27,19 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let bookHolder = [];
 
-  // storage for books
-  if (localStorage.getItem('storedBooks')) {
-    bookHolder = JSON.parse(localStorage.getItem('storedBooks'));
-    display();
-  }
-
   // storage for inputs
   const inputStorage = JSON.parse(localStorage.getItem('inputdata')) || {};
   inputTitle.value = inputStorage.inputTitle || '';
   inputAuthor.value = inputStorage.inputAuthor || '';
-
-  inputTitle.addEventListener('input', inputSave);
-  inputAuthor.addEventListener('input', inputSave);
 
   function inputSave() {
     inputStorage.inputTitle = inputTitle.value;
@@ -47,6 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     localStorage.setItem('inputdata', JSON.stringify(inputStorage));
   }
+
+  inputTitle.addEventListener('input', inputSave);
+  inputAuthor.addEventListener('input', inputSave);
 
   // add a single book
   function addBook() {
@@ -64,6 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
     inputTitle.value = '';
     inputAuthor.value = '';
     inputSave();
+  }
+
+  function deleteBook(event) {
+    const button = event.target;
+    const instance = button.parentNode;
+    instance.remove();
+    const index = button.getAttribute('data-index');
+    bookHolder = bookHolder.filter((book, i) => i !== parseInt(index, 10));
+    localStorage.setItem('storedBooks', JSON.stringify(bookHolder));
   }
 
   // display the books that were inserted
@@ -86,6 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // storage for books
+  if (localStorage.getItem('storedBooks')) {
+    bookHolder = JSON.parse(localStorage.getItem('storedBooks'));
+    display();
+  }
+
   // create an error mssg
   const error = document.createElement('span');
   error.innerHTML = 'please fill out all these fields';
@@ -102,13 +110,4 @@ document.addEventListener('DOMContentLoaded', () => {
       display();
     }
   });
-
-  function deleteBook(event) {
-    const button = event.target;
-    const instance = button.parentNode;
-    instance.remove();
-    const index = button.getAttribute('data-index');
-    bookHolder = bookHolder.filter((book, i) => i !== parseInt(index, 10));
-    localStorage.setItem('storedBooks', JSON.stringify(bookHolder));
-  }
 });
