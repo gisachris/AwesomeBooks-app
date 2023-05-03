@@ -1,11 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
-  
-  <img src="./images/port.PNG" alt="logo" width="140"  height="auto" />
-  <br/>
-
   <h3><b>Awesome Books</b></h3>
-
 </div>
 
 # 📗 Table of Contents
@@ -88,7 +83,7 @@ Open index.html using a live server.
 👤 Gisa Chris, Sive MdluluI
 
 - GitHub: [@githubhandle](https://github.com/gisachris)
-GitHub: [@githubhandle](https://github.com/sivemdluli)
+- GitHub: [@githubhandle](https://github.com/sivemdluli)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,7 +100,7 @@ Deployment link will be available after we complete the project
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]( https://gisachris.github.io/AwesomeBooks/issues).
+Feel free to check the [issues page]( https://github.com/gisachris/AwesomeBooks/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

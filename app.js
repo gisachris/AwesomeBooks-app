@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const instance = button.parentNode;
     instance.remove();
     const index = button.getAttribute('data-index');
-    // bookHolder.splice(index, 1);
     bookHolder = bookHolder.filter((book, i) => i !== parseInt(index, 10));
     localStorage.setItem('storedBooks', JSON.stringify(bookHolder));
   }
