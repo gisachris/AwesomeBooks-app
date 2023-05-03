@@ -26,10 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let bookHolder = [];
 
+  // storage for books
+  if (localStorage.getItem('storedBooks')) {
+    bookHolder = JSON.parse(localStorage.getItem('storedBooks'));
+    display();
+  }
+
   // storage for inputs
   const inputStorage = JSON.parse(localStorage.getItem('inputdata')) || {};
   inputTitle.value = inputStorage.inputTitle || '';
   inputAuthor.value = inputStorage.inputAuthor || '';
+
+  inputTitle.addEventListener('input', inputSave);
+  inputAuthor.addEventListener('input', inputSave);
 
   function inputSave() {
     inputStorage.inputTitle = inputTitle.value;
@@ -37,9 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     localStorage.setItem('inputdata', JSON.stringify(inputStorage));
   }
-
-  inputTitle.addEventListener('input', inputSave);
-  inputAuthor.addEventListener('input', inputSave);
 
   // add a single book
   function addBook() {
@@ -57,15 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     inputTitle.value = '';
     inputAuthor.value = '';
     inputSave();
-  }
-
-  function deleteBook(event) {
-    const button = event.target;
-    const instance = button.parentNode;
-    instance.remove();
-    const index = button.getAttribute('data-index');
-    bookHolder = bookHolder.filter((book, i) => i !== parseInt(index, 10));
-    localStorage.setItem('storedBooks', JSON.stringify(bookHolder));
   }
 
   // display the books that were inserted
@@ -88,12 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // storage for books
-  if (localStorage.getItem('storedBooks')) {
-    bookHolder = JSON.parse(localStorage.getItem('storedBooks'));
-    display();
-  }
-
   // create an error mssg
   const error = document.createElement('span');
   error.innerHTML = 'please fill out all these fields';
@@ -110,4 +101,101 @@ document.addEventListener('DOMContentLoaded', () => {
       display();
     }
   });
+
+  function deleteBook(event) {
+    const button = event.target;
+    const instance = button.parentNode;
+    instance.remove();
+    const index = button.getAttribute('data-index');
+    // bookHolder.splice(index, 1);
+    bookHolder = bookHolder.filter((book, i) => i !== parseInt(index, 10));
+    localStorage.setItem('storedBooks', JSON.stringify(bookHolder));
+  }
+
+  //page navigation
+
+  //access dom elements
+
+  //tab buttons
+  const listTab = document.querySelector('.list');
+  const addingTab = document.querySelector('.adding');
+  const contactTab = document.querySelector('.contact');
+
+  //the h2 tag
+  const titletext = document.querySelector('.Pagetitle .titletext');
+
+  //the contact page
+  const contactpage = document.querySelector('.container div .contact'); 
+
+  function listOn(){
+    //changing the h2
+    titletext.textContent = 'All Awesome Books';
+ 
+    //removing other sections
+    bookDisplay.style.display = 'block';
+    form.style.display = 'none';
+    contactpage.style.display = 'none';
+ 
+ 
+     //changing the colors
+     if(bookDisplay.style.display === 'block'){
+      addingTab.style.color = 'black';
+      listTab.style.color = 'blue';
+      contactTab.style.color = 'black';
+     }else {
+      listTab.style.color = 'black';
+     }
+     return;
+   }
+   listTab.addEventListener('click',listOn);
+
+  function addOn(){
+    //changing the h2
+    titletext.textContent = 'Add a New Book';
+ 
+    //removing other sections
+    bookDisplay.style.display = 'none';
+    form.style.display = 'block';
+    contactpage.style.display = 'none';
+ 
+ 
+     //changing the colors
+     if(bookDisplay.style.display === 'none'){
+      addingTab.style.color = 'blue';
+      listTab.style.color = 'black';
+      contactTab.style.color = 'black';
+     }else {
+      addingTab.style.color = 'black';
+     }
+     return;
+   }
+
+  addingTab.addEventListener('click',addOn);
+
+  function contactOn(){
+    //changing the h2
+    titletext.textContent = 'Contact Information';
+ 
+    //removing other sections
+    bookDisplay.style.display = 'none';
+    form.style.display = 'none';
+    contactpage.style.display = 'block';
+ 
+ 
+     //changing the colors
+     if(contactTab.style.display === 'block'){
+      addingTab.style.color = 'black';
+      listTab.style.color = 'black';
+      contactTab.style.color = 'blue';
+     }else {
+      contactTab.style.color = 'black';
+     }
+     return;
+   }
+  
+   contactTab.addEventListener('click',contactOn);
+
+  //the body 
+  // const body = document.body;
+  // body.addEventListener('onload',addOn);
 });
