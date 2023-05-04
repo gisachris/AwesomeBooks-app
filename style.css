@@ -6,25 +6,29 @@ body {
   /* justify-content: center; */
   align-items: center;
   max-width: 100%;
-  min-width: 510px;
   width: 100%;
   min-height: 100vh;
-  height: 100vh;
-  margin-bottom: 0;
-  margin-left: 0;
-  /* padding: 20px; */
+  height: auto;
+  margin: 0;
   font-family: 'Concert One', cursive;
   font-weight: normal;
   overflow-x: hidden;
+  flex-wrap: wrap;
 }
 
 header {
   max-width: 100%;
   width: 85%;
+  min-height: 69px;
+  min-height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 5px solid black;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-top: 10px;
 }
 
 .navigationtext {
@@ -62,7 +66,13 @@ header {
 }
 
 main {
-  width: 100%;
+  width: 85%;
+  min-height: 61.5vh;
+  margin: 0 auto;
+}
+
+.datetime {
+  float: right;
 }
 
 .Pagetitle {
@@ -78,10 +88,7 @@ main {
   display: none;
 }
 
-.bookDisplay span {
-  color: red;
-  font-weight: bold;
-  font-size: 1rem;
+.directive {
   display: block;
   width: 100%;
   text-align: center;
@@ -125,8 +132,8 @@ article:nth-child(odd) {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 2rem;
-  width: fit-content;
+  width: 85%;
+  max-width: 85%;
   margin: 0 auto;
   display: none;
 }
@@ -138,15 +145,38 @@ article:nth-child(odd) {
 
 .form input {
   border: 2px solid black;
+  /* width:  */
+}
+
+.formInput {
+  width: 60%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  margin: 0 auto;
 }
 
 .form button {
-  display: flex;
+  align-self: center;
   background-color: white;
-  box-shadow: 0 8px 5px 1px rgba(0, 0, 0, 0.9);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
   border: 2px solid #000;
-  justify-self: right;
-  margin-left: 130px;
+  float: right;
+  padding: 0.3rem;
+  min-width: 10%;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 52%;
+}
+
+.form span {
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  display: none;
 }
 
 .contact {
@@ -154,7 +184,7 @@ article:nth-child(odd) {
   width: 80%;
   overflow-x: hidden;
   font-size: 1.4rem;
-  /* display: none; */
+  display: none;
 }
 
 .copyright {
