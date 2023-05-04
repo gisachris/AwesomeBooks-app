@@ -11,17 +11,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header class="navigation">
+    <span class="navigationtext"><a href="index.html">Awesome Books</a></span>
+    <nav class="navbar">
+      <ul class="navlist">
+        <li class="navitem list">List</li>
+        <span class="navline">|</span>
+        <li class="navitem adding">Add new</li>
+        <span class="navline">|</span>
+        <li class="navitem cont">Contact</li>
+      </ul>
+    </nav>
+  </header>
   <main class="container">
+    <span class="datetime">insert date</span><br>
     <div class="Pagetitle">
-      <h1 class="titletext">Awesome Books</h1>
+      <h1 class="titletext"></h1>
     </div>
-    <div class="form">
-      <h3 class="form-header">Add a new Book</h3>
-      <input type="text" class="title" placeholder="title" required><br><br>
-      <input type="text" class="author" placeholder="author" required><br><br>
+    <section class="form">
+      <input type="text" class="title formInput" placeholder="title" required><br>
+      <input type="text" class="author formInput" placeholder="author" required><br>
       <button class="add">Add</button>
-    </div>
+    </section>
+    <section class="contact">
+      <p class="contquestion">Do you have any questions or you just want to say "Hello"?</p>
+      <span class="underquestion">You can reach out to us!</span>
+      <ul class="contanswers">
+        <li class="answer">Our email: Awesomebooks@gmail.com</li>
+        <li class="answer">Our phone number:+004 358 642 200</li>
+        <li class="answer">Our Address:Streetname 22,844st awesomebooks country</li>
+      </ul>
+    </section>
   </main>
+  <section class="copyright">
+    <span class="copytext">Copyright ...</span>
+  </section>
+  <footer>
+    <section class="acfooter">
+    </section>
+  </footer>
   <script src="app.js"></script>
 </body>
 </html>
