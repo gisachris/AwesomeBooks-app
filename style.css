@@ -3,6 +3,7 @@
 body {
   display: flex;
   flex-direction: column;
+
   /* justify-content: center; */
   align-items: center;
   max-width: 100%;
@@ -129,7 +130,6 @@ article:nth-child(odd) {
 }
 
 .form {
-  display: flex;
   align-items: center;
   flex-direction: column;
   width: 85%;
@@ -145,6 +145,7 @@ article:nth-child(odd) {
 
 .form input {
   border: 2px solid black;
+
   /* width:  */
 }
 
@@ -172,7 +173,6 @@ article:nth-child(odd) {
   color: red;
   font-weight: bold;
   font-size: 1rem;
-  display: block;
   width: 100%;
   text-align: center;
   margin-bottom: 5px;
@@ -195,7 +195,7 @@ article:nth-child(odd) {
   display: flex;
   justify-content: start;
   align-items: center;
-  border: 4px solid black;  
+  border: 4px solid black;
 }
 
 .copytext {

@@ -116,106 +116,102 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('storedBooks', JSON.stringify(bookHolder));
   }
 
-  //page navigation
+  // page navigation
 
-  //access dom elements
+  // access dom elements
 
-  //tab buttons
+  // tab buttons
   const listTab = document.querySelector('.list');
   const addingTab = document.querySelector('.adding');
   const contactTab = document.querySelector('.cont');
 
-  //the h2 tag
+  // the h2 tag
   const titletext = document.querySelector('.titletext');
 
-  //the contact page
-  const contactpage = document.querySelector('.contact'); 
+  // the contact page
+  const contactpage = document.querySelector('.contact');
 
-  //mssg for no books
+  // mssg for no books
   const bookarticles = document.querySelectorAll('.dercounter');
-  const directive =document.createElement('span');
+  const directive = document.createElement('span');
   directive.classList.add('directive');
   directive.textContent = 'No books have been added yet';
   bookDisplay.append(directive);
 
-  function listOn(){
-    //changing the h2
+  function listOn() {
+    // changing the h2
     titletext.textContent = 'All Awesome Books';
- 
-    //removing other sections
+
+    // removing other sections
     bookDisplay.style.display = 'block';
     form.style.display = 'none';
     contactpage.style.display = 'none';
 
-    //when no books have been added yet
-    if(bookarticles.length>0){
+    // when no books have been added yet
+    if (bookarticles.length > 0) {
       directive.style.display = 'none';
-    }else {
+    } else {
       directive.style.display = 'block';
     }
- 
-     //changing the colors
-     if(bookDisplay.style.display === 'block'){
+
+    // changing the colors
+    if (bookDisplay.style.display === 'block') {
       addingTab.style.color = 'black';
       listTab.style.color = 'blue';
       contactTab.style.color = 'black';
-     }else {
+    } else {
       listTab.style.color = 'black';
-     }
-     return;
-   }
-   listTab.addEventListener('click',listOn);
+    }
+  }
+  listTab.addEventListener('click', listOn);
 
-  function addOn(){
-    //changing the h2
+  function addOn() {
+    // changing the h2
     titletext.textContent = 'Add a New Book';
- 
-    //removing other sections
+
+    // removing other sections
     bookDisplay.style.display = 'none';
     form.style.display = 'flex';
     contactpage.style.display = 'none';
- 
- 
-     //changing the colors
-     if(form.style.display === 'flex'){
+
+    // changing the colors
+    if (form.style.display === 'flex') {
       addingTab.style.color = 'blue';
       listTab.style.color = 'black';
       contactTab.style.color = 'black';
-     }else {
+    } else {
       addingTab.style.color = 'black';
-     }
-     return;
-   }
+    }
+  }
 
-  addingTab.addEventListener('click',addOn);
+  addingTab.addEventListener('click', addOn);
 
-  function contactOn(){
-    //changing the h2
+  function contactOn() {
+    // changing the h2
     titletext.textContent = 'Contact Information';
- 
-    //removing other sections
+
+    // removing other sections
     bookDisplay.style.display = 'none';
     form.style.display = 'none';
     contactpage.style.display = 'block';
- 
-    //arrange elements
+
+    // arrange elements
     const titlesection = document.querySelector('.Pagetitle');
     container.insertBefore(titlesection, contactpage);
- 
-     //changing the colors
-     if(contactpage.style.display === 'block'){
+
+    // changing the colors
+    if (contactpage.style.display === 'block') {
       addingTab.style.color = 'black';
       listTab.style.color = 'black';
       contactTab.style.color = 'blue';
-     }else {
+    } else {
       contactTab.style.color = 'black';
-     }
-     return;
-   }
-  
-   contactTab.addEventListener('click',contactOn);
+    }
+  }
 
-  //insert the time 
+  contactTab.addEventListener('click', contactOn);
+
+  // insert the time
   function time() {
     const myDate = new Date();
     const year = myDate.getFullYear();
@@ -224,38 +220,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const month = monthNames[monthindex];
     const day = myDate.getDate();
     let daySuffix;
-  switch (day % 10) {
-    case 1:
-      daySuffix = 'st';
-      break;
-    case 2:
-      daySuffix = 'nd';
-      break;
-    case 3:
-      daySuffix = 'rd';
-      break;
-    default:
-      daySuffix = 'th';
-      break;
-  }
-    const formatteddays = day < 10 ? '0' + day : day;
-    const dayadder = month + '-' + formatteddays + daySuffix + '-' + year;
+    switch (day % 10) {
+      case 1:
+        daySuffix = 'st';
+        break;
+      case 2:
+        daySuffix = 'nd';
+        break;
+      case 3:
+        daySuffix = 'rd';
+        break;
+      default:
+        daySuffix = 'th';
+        break;
+    }
+    const formatteddays = day < 10 ? `0${day}` : day;
+    const dayadder = `${month}-${formatteddays}${daySuffix}-${year}`;
     const hours = myDate.getHours();
     const minutes = myDate.getMinutes();
     const seconds = myDate.getSeconds();
     const ampm = hours >= 12 ? 'pm' : 'am';
     const formattedHours = hours % 12 || 12;
-    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-    const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
-    const formattedTime = formattedHours + ':' + formattedMinutes + ':' + formattedSeconds + ' ' + ampm;
-    return dayadder + ' ' + formattedTime;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+    const formattedTime = `${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}`;
+    return `${dayadder} ${formattedTime}`;
   }
-  
+
   const datetime = document.querySelector('.datetime');
   datetime.textContent = time();
-  
 
-  //when the page loads
-  window.addEventListener('load',listOn);
-
+  // when the page loads
+  window.addEventListener('load', listOn);
 });
