@@ -1,13 +1,9 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-cycle */
-/* eslint-disable import/no-mutable-exports */
 import {
   container, header, form, titletext, contactpage, listTab, addingTab, contactTab,
 } from '../index.js';
 import { error } from './error.js';
 import { inputSave } from './localstorage.js';
-// import {bookarticles,directive,bookMessage} from './directive.js';
+
 // create a single book template
 export const inputTitle = document.querySelector('.title');
 export const inputAuthor = document.querySelector('.author');
@@ -48,7 +44,6 @@ export const deleteBook = (event) => {
   const instance = button.parentNode;
   instance.remove();
   const index = button.getAttribute('data-index');
-  // bookHolder.splice(index, 1);
   bookHolder = bookHolder.filter((book, i) => i !== parseInt(index, 10));
   localStorage.setItem('storedBooks', JSON.stringify(bookHolder));
 };
@@ -102,13 +97,12 @@ const directive = document.createElement('span');
 directive.classList.add('directive');
 directive.textContent = 'No books have been added yet';
 
-bookDisplay.append(directive);
-
 export const bookMessage = () => {
   // when no books have been added yet
   if (bookarticles.length > 0) {
     directive.style.display = 'none';
   } else {
+    bookDisplay.append(directive);
     directive.style.display = 'block';
   }
 };

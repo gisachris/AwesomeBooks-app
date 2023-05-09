@@ -4,7 +4,6 @@ import {
 import bookHolder, {
   addBook, deleteBook, inputTitle, inputAuthor, addButton, bookDisplay,
 } from './book.js';
-// import {bookarticles,directive} from './directive.js';
 
 export const listOn = () => {
   // changing the h2
