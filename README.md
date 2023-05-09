@@ -82,16 +82,12 @@ Open index.html using a live server.
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 Gisa Chris, Sive MdluluI
+👤 Gisa Chris
 
-- GitHub: [@githubhandle](https://github.com/gisachris)
-- GitHub: [@githubhandle](https://github.com/sivemdluli)
+- GitHub: [@gisa chris](https://github.com/gisachris)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment <a name="live-demo"></a>
-
-Deployment link will be available after we complete the project
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] Add desktop version
