@@ -1,8 +1,13 @@
 /* eslint-disable no-plusplus */
-import { container, header, form,titletext, contactpage, listTab, addingTab, contactTab } from '../index.js';
-import {error} from './error.js';
-import {inputSave} from './localstorage.js';
-//import {bookarticles,directive,bookMessage} from './directive.js'; 
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/no-mutable-exports */
+import {
+  container, header, form, titletext, contactpage, listTab, addingTab, contactTab,
+} from '../index.js';
+import { error } from './error.js';
+import { inputSave } from './localstorage.js';
+// import {bookarticles,directive,bookMessage} from './directive.js';
 // create a single book template
 export const inputTitle = document.querySelector('.title');
 export const inputAuthor = document.querySelector('.author');
@@ -36,7 +41,7 @@ export const addBook = () => {
   inputTitle.value = '';
   inputAuthor.value = '';
   inputSave();
-}
+};
 
 export const deleteBook = (event) => {
   const button = event.target;
@@ -46,7 +51,7 @@ export const deleteBook = (event) => {
   // bookHolder.splice(index, 1);
   bookHolder = bookHolder.filter((book, i) => i !== parseInt(index, 10));
   localStorage.setItem('storedBooks', JSON.stringify(bookHolder));
-}
+};
 
 // display the books that were inserted
 export const display = () => {
@@ -67,7 +72,7 @@ export const display = () => {
     bookInstance.append(dispTitle, dispAuthor, delButton, hrline);
     bookDisplay.append(bookInstance);
   }
-}
+};
 
 // storage for books
 if (localStorage.getItem('storedBooks')) {
@@ -99,13 +104,13 @@ directive.textContent = 'No books have been added yet';
 
 bookDisplay.append(directive);
 
-export const bookMessage = () =>{
+export const bookMessage = () => {
   // when no books have been added yet
- if (bookarticles.length > 0) {
-  directive.style.display = 'none';
-} else {
-  directive.style.display = 'block';
-}
-}
+  if (bookarticles.length > 0) {
+    directive.style.display = 'none';
+  } else {
+    directive.style.display = 'block';
+  }
+};
 
 export default bookHolder;

@@ -1,6 +1,12 @@
-import { container, header, form,titletext, contactpage, listTab, addingTab, contactTab } from '../index.js';
-import bookHolder,{addBook,deleteBook,inputTitle,inputAuthor,addButton,bookDisplay} from './book.js';
-//import {bookarticles,directive} from './directive.js'; 
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-cycle */
+import {
+  container, header, form, titletext, contactpage, listTab, addingTab, contactTab,
+} from '../index.js';
+import bookHolder, {
+  addBook, deleteBook, inputTitle, inputAuthor, addButton, bookDisplay,
+} from './book.js';
+// import {bookarticles,directive} from './directive.js';
 
 export const listOn = () => {
   // changing the h2
@@ -19,9 +25,9 @@ export const listOn = () => {
   } else {
     listTab.style.color = 'black';
   }
-  
+
   window.addEventListener('load', listOn);
-}
+};
 
 export const addOn = () => {
   // changing the h2
@@ -42,7 +48,7 @@ export const addOn = () => {
   }
 
   window.addEventListener('load', addOn);
-}
+};
 
 export const contactOn = () => {
   // changing the h2
@@ -67,4 +73,4 @@ export const contactOn = () => {
   }
 
   window.addEventListener('load', contactOn);
-}
+};
