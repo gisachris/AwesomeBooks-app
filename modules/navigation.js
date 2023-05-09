@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-cycle */
 import {
   container, header, form, titletext, contactpage, listTab, addingTab, contactTab,
 } from '../index.js';

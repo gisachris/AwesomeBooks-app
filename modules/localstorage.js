@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-cycle */
 import bookHolder, {
   addBook, deleteBook, inputTitle, inputAuthor, addButton,
 } from './book.js';
