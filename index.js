@@ -2,7 +2,7 @@ import {inputStorage,inputSave,bookSave} from './modules/localstorage.js';
 import {error} from '../AwesomeBooks/modules/error.js';
 import {addBook,deleteBook,inputTitle,inputAuthor,addButton,display,bookDisplay} from './modules/book.js'; 
 import {listOn,addOn,contactOn} from './modules/navigation.js';
-//import {bookarticles,directive,bookMessage} from './modules/directive.js'; 
+import {timeArea} from './modules/time.js';
 
 // document structure selection
   const container = document.querySelector('.container');
@@ -28,5 +28,5 @@ export { container, header, form, bookDisplay,titletext, contactpage, listTab, a
 
 // when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-  addOn();
+  listOn();
 });

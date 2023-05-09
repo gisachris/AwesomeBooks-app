@@ -21,7 +21,7 @@ class Book {
 
 let bookHolder = [];
 
-export function addBook() {
+export const addBook = () => {
   const titleData = inputTitle.value;
   const authorData = inputAuthor.value;
 
@@ -38,7 +38,7 @@ export function addBook() {
   inputSave();
 }
 
-export function deleteBook(event) {
+export const deleteBook = (event) => {
   const button = event.target;
   const instance = button.parentNode;
   instance.remove();
@@ -49,7 +49,7 @@ export function deleteBook(event) {
 }
 
 // display the books that were inserted
-export function display() {
+export const display = () => {
   // displaying all the books
   for (let i = 0; i < bookHolder.length; i++) {
     const bookInstance = document.createElement('article');
@@ -99,7 +99,7 @@ directive.textContent = 'No books have been added yet';
 
 bookDisplay.append(directive);
 
-export function bookMessage(){
+export const bookMessage = () =>{
   // when no books have been added yet
  if (bookarticles.length > 0) {
   directive.style.display = 'none';

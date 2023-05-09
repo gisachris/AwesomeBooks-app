@@ -2,7 +2,7 @@ import { container, header, form,titletext, contactpage, listTab, addingTab, con
 import bookHolder,{addBook,deleteBook,inputTitle,inputAuthor,addButton,bookDisplay} from './book.js';
 //import {bookarticles,directive} from './directive.js'; 
 
-export function listOn() {
+export const listOn = () => {
   // changing the h2
   titletext.textContent = 'All Awesome Books';
 
@@ -23,7 +23,7 @@ export function listOn() {
   window.addEventListener('load', listOn);
 }
 
-export function addOn() {
+export const addOn = () => {
   // changing the h2
   titletext.textContent = 'Add a New Book';
 
@@ -44,7 +44,7 @@ export function addOn() {
   window.addEventListener('load', addOn);
 }
 
-export function contactOn() {
+export const contactOn = () => {
   // changing the h2
   titletext.textContent = 'Contact Information';
 
