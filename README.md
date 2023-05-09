@@ -84,13 +84,9 @@ Open index.html using a live server.
 
 👤 Gisa Chris
 
-- GitHub: [@githubhandle](https://github.com/gisachris)
+- GitHub: [@gisa chris](https://github.com/gisachris)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Deployment <a name="live-demo"></a>
-
-[live demo](https://gisachris.github.io/AwesomeBooks/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
