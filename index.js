@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import { inputStorage, inputSave, bookSave } from './modules/localstorage.js';
 import { error } from './modules/error.js';
 import {
